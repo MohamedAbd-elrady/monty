@@ -28,7 +28,7 @@ void pint(stack_t **h, unsigned int line_number)
 {
 	if (!h || !*h)
 	{
-		printf("L%u: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*h)->n);
@@ -43,14 +43,14 @@ void pchar(stack_t **h, unsigned int line_number)
 {
 	if (!h || !*h)
 	{
-		printf("L%u: can't pchar, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (((*h)->n) >= 0 && ((*h)->n) <= 127)
 		printf("%c\n", (*h)->n);
 	else
 	{
-		printf("L%u: can't pchar, value out of range\n", line_number);
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -67,7 +67,7 @@ void pstr(stack_t **h, unsigned int line_number)
 
 	if (!h || !*h)
 	{
-		printf("L%u: can't pchar, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	tmp = *h;

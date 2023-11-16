@@ -41,7 +41,8 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* opcodes related prototypes */
+/* opcodes prototypes */
+void _main_cont(int is_push, unsigned int line, char *token, stack_t *head);
 void (*get_op_func(char *token1))(stack_t **stack, unsigned int line_number);
 void push(stack_t **h, unsigned int line_number, const char *n);
 void pop(stack_t **h, unsigned int line_number);
@@ -54,14 +55,14 @@ void pstr(stack_t **h, unsigned int line_number);
 void rotl(stack_t **h, unsigned int line_number);
 void rotr(stack_t **h, unsigned int line_number);
 
-/* calculator prototypes */
+/* operation*/
 void _add(stack_t **h, unsigned int line_number);
 void _sub(stack_t **h, unsigned int line_number);
 void _mul(stack_t **h, unsigned int line_number);
 void _div(stack_t **h, unsigned int line_number);
 void _mod(stack_t **h, unsigned int line_number);
 
-/* doubly linked list related prototypes */
+/* doubly linked list*/
 int add_end_node(stack_t **h, int n);
 void delete_end_node(stack_t **h);
 void free_dlist(stack_t **h);
